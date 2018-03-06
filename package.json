@@ -1,0 +1,29 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "start:dev": "nodemon --watch src -L --exec 'node --inspect-brk=0.0.0.0:5858' ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poetapp/create-keys.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/poetapp/create-keys/issues"
+  },
+  "homepage": "https://github.com/poetapp/create-keys#readme",
+  "dependencies": {
+    "bitcoin-core": "^2.0.0",
+    "crypto-js": "^3.1.9-1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.1"
+  }
+}
