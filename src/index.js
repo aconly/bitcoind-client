@@ -18,7 +18,7 @@ const main = async () => {
     console.log('--------------- Transaction ---------------')
     console.log(JSON.stringify(rawTransaction, null, 2))
   } catch(e) {
-    console.log('e ',e)
+    console.log(e.message)
   }
 }
 

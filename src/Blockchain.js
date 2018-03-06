@@ -10,15 +10,18 @@ class Blockchain {
     try {
       const listUnspent = await this.client.listUnspent()
       const unspent = listUnspent[0]
-      const address = unspent.address
-      const inputs = [{ txid: unspent.txid, vout: unspent.vout }]
-      const dataSha256 = sha256(data).toString();
-      const outputs = { data: dataSha256, [address]: 0 }
-      const RawTx = await this.client.createRawTransaction(inputs, outputs)
-      const tx = await this.client.signRawTransaction(RawTx)
-      return tx.hex
+      if (unspent) {
+        const address = unspent.address
+        const inputs = [{ txid: unspent.txid, vout: unspent.vout }]
+        const dataSha256 = sha256(data).toString();
+        const outputs = { data: dataSha256, [address]: 0 }
+        const RawTx = await this.client.createRawTransaction(inputs, outputs)
+        const tx = await this.client.signRawTransaction(RawTx)
+        return tx.hex
+      }
+      throw new Error('There are not unspents, if are using regtest please generate some BTCs for test, :)')
     } catch (e) {
-      console.log("e", e)
+      throw new Error(e.message)
     }
   }
 
