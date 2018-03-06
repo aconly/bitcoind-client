@@ -7,6 +7,8 @@ Firstly you have to have bitcoind on your system. You can use this docker:
 https://github.com/poetapp/bitcoind-docker
 
 
+Before execute start, generate some BTCs in your regtest account
+
 Start with 
 
 ```
