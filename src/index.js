@@ -4,7 +4,7 @@ const main = async () => {
   try {
     
     const blockchain = new Blockchain({
-      port: 8335,
+      port: 8332,
       username: "user",
       password: "password"
     })
