@@ -1,5 +1,7 @@
 # Bitcoind client
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/poetapp/bitcoind-client.svg)](https://greenkeeper.io/)
+
 Example, transacction with bitcoind
 
 Firstly you have to have bitcoind on your system. You can use this docker:
